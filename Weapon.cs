@@ -1,0 +1,4 @@
+// Fields:
+// ID
+// MaximumDamage
+// Name
