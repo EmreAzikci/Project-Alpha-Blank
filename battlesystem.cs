@@ -33,6 +33,25 @@ public static partial class Program
                 player.CurrentHitPoints += 20;
                 Console.WriteLine("You used a health potion and restored 20 HP!");
             }
+            else if (choice == "Dodge")
+            {
+                Random rand = new Random();
+                int dodgeChance = rand.Next(0, 2); // 50% chance to dodge
+                if (dodgeChance == 1)
+                {
+                    Console.WriteLine("You successfully dodged the attack!");
+                    continue; // Skip monster's turn
+                }
+                else
+                {
+                    Console.WriteLine("Dodge failed!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid action. Try again.");
+                continue;
+            }
             // Monster retaliates if still alive
             if (is_alive(monster.CurrentHitPoints))
             {
@@ -54,3 +73,4 @@ public static partial class Program
         }
     }
 }
+
