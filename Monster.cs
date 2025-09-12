@@ -1,9 +1,4 @@
-// fields needed
-// CurrentHitPoints
-// ID
-// MaximumDamage
-// MaximumHitPoints
-// Name
+
 public class Monster
 {
     public int ID { get; set; }
