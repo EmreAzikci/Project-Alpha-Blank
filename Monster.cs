@@ -1,3 +1,4 @@
+
 public class Monster
 {
     public int ID { get; set; }
