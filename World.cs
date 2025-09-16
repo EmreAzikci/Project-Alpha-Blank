@@ -8,7 +8,7 @@ public static class World
     public static readonly Random RandomGenerator = new Random();
 
     public const int WEAPON_ID_RUSTY_SWORD = 1;
-    public const int WEAPON_ID_CLUB = 2;
+    public const int WEAPON_ID_DIAMOND_SWORD = 2;
 
     public const int MONSTER_ID_RAT = 1;
     public const int MONSTER_ID_SNAKE = 2;
@@ -16,7 +16,7 @@ public static class World
 
     public const int QUEST_ID_CLEAR_ALCHEMIST_GARDEN = 1;
     public const int QUEST_ID_CLEAR_FARMERS_FIELD = 2;
-    public const int QUEST_ID_COLLECT_SPIDER_SILK = 3;
+    public const int QUEST_ID_CLEAR_SPIDER_FOREST = 3;
 
     public const int LOCATION_ID_HOME = 1;
     public const int LOCATION_ID_TOWN_SQUARE = 2;
@@ -40,18 +40,18 @@ public static class World
     public static void PopulateWeapons()
     {
         Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
-        Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
+        Weapons.Add(new Weapon(WEAPON_ID_DIAMOND_SWORD, "Diamond sword", 10));
     }
 
     public static void PopulateMonsters()
     {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 4, 12, 12);
 
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 2, 6, 6);
 
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 6, 18, 18);
 
 
         Monsters.Add(rat);
@@ -78,8 +78,8 @@ public static class World
 
         Quest clearSpidersForest =
                     new Quest(
-                        QUEST_ID_COLLECT_SPIDER_SILK,
-                        "Collect spider silk",
+                        QUEST_ID_CLEAR_SPIDER_FOREST,
+                        "SAVE THE VILLAGE",
                         "Kill spiders in the spider forest");
 
 
@@ -110,7 +110,7 @@ public static class World
         Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", null, null);
 
         Location bridge = new Location(LOCATION_ID_BRIDGE, "Bridge", "A stone bridge crosses a wide river.", null, null);
-        bridge.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
+        bridge.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_SPIDER_FOREST);
 
         Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null);
         spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
